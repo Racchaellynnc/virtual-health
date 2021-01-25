@@ -9,8 +9,11 @@ import Login from './pages/Login';
 import PatientDashboard from './pages/PatientDashboard';
 import Assistant from './patient/Assistant';
 import CheckLogs from './patient/CheckLogs';
-import DoctorLogs from './patient/DoctorLogs';
+import DoctorLogs from './doctor/DoctorLogs';
+import PatientLogs from './patient/PatientLogs';
 import Symptoms from './patient/Symptoms';
+import DoctorChat from './doctor/DoctorChat';
+import PatientChat from './patient/PatientChat';
 
 function HomeScreen() {
   return (
@@ -150,6 +153,48 @@ function App() {
             },
           }}
           />
+          <Stack.Screen 
+          name="doctor-chat" 
+          component={DoctorChat} 
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: '#23a4e4',
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+        }}
+        />
+        <Stack.Screen 
+          name="patient-chat" 
+          component={PatientChat} 
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: '#23a4e4',
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+        }}
+        />
+        <Stack.Screen 
+          name="patient-logs" 
+          component={PatientLogs} 
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: '#23a4e4',
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+        }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

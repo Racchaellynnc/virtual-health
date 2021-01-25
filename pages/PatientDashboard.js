@@ -1,9 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import DrawerNavigator from '../components/DrawerNav';
+
 
 export default function PatientDashboard() {
-    const navigation = useNavigation(); 
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <Image 

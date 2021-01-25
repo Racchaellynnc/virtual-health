@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function DoctorDashboard() {
+    const [message, setMessage] = useState('')
+
+    const navigation = useNavigation(); 
+
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Interact with Doctor</Text>
+            <Text style={styles.title}>Interact with Patient</Text>
             <View style={styles.container}>
-                <Text style={styles.question}>Question from Doctor</Text>
+                <Text style={styles.question}>Question for Patient</Text>
                 <TextInput 
                     style={styles.inputBox} 
                     underlineColorAndroid="rgba(0, 0, 0, 0)" 
                     placeholderTextColor='white'
+                    onChangeText={setMessage}
                     />
+                    <Text>{message}</Text>
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Submit</Text>
+                    <Text 
+                        style={styles.buttonText}
+                        onPress={() => {
+                            /* 1. Navigate to the Details route with message */
+                            navigation.navigate('doctor-chat', {
+                              message
+                            });
+                        }}
+                    >
+                    Submit</Text>
                 </TouchableOpacity>
             </View>
         </View>
